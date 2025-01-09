@@ -1,0 +1,293 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[french]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{Your Paper}
+\author{Alihou Junior Ayangbemi}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+
+
+CreaCube est une activité de résolution de problèmes qui mobilise à la fois la pensée informatique et la résolution créative de problèmes. Le concept repose sur l'assemblage de cubes en une structure capable de répondre à une performance spécifique, offrant ainsi une approche innovante de l'apprentissage et de la créativité.
+Dans ce cadre, le programme de recherche CreaComp a été initié pour approfondir la compréhension des mécanismes de résolution créative de problèmes en s'appuyant sur les méthodes développées par CreaCube. Ce programme a donné lieu à de nombreuses recherches et publications, dirigées notamment par Madame Margarida Romero, et il est documenté sur le site web  \href{https://creamaker.wordpress.com}{ANR CreaMaker}. Ce site centralise les ressources, les activités et les résultats des études menées, offrant une plateforme de suivi continu des avancées du programme.
+Mon projet s’inscrit dans cet environnement et vise à concevoir une carte interactive et facile d’utilisation permettant de naviguer efficacement parmi les résultats de recherche et d’identifier les chercheurs impliqués. Ce travail, orienté vers la programmation web, m’a offert une opportunité idéale pour élargir mes compétences informatiques, traditionnellement centrées sur l’administration réseau et système.
+
+
+
+\section{Materials and Methods}
+
+
+Pour concevoir cette carte interactive, nous avons adopté une approche structurée, combinant des outils modernes de développement web et des techniques d'organisation des données. Notre démarche a commencé par une analyse approfondie de la page web existante et s’est poursuivie par la conception, l’évaluation et la mise en œuvre d’une solution adaptée.
+
+\subsection{Analyse de la page existante}
+
+La page actuelle, hébergée sur WordPress, présente les recherches sous forme d’un simple listing des articles publiés (voir Figure~\ref{fig:old_creacube}). Bien que fonctionnelle, cette structure s’avère difficile à parcourir : il faut parfois une minute ou plus pour retrouver un article spécifique, ce qui nuit à l’efficacité pour les utilisateurs. Après une étude approfondie de son contenu et de son organisation, nous avons conclu qu'une organisation thématique améliorerait considérablement l’expérience utilisateur.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{old_creacube.png}
+    \caption{presentation listé de la page web}
+    \label{fig:old_creacube}
+\end{figure}
+
+\subsection{Proposition de catégorisation}
+
+En collaboration avec le professeur Margarida Romero, nous avons identifié les thématiques principales des articles, que nous avons regroupées en catégories suivantes :
+\begin{itemize}
+    \item Creativity and problem solving :
+    \begin{itemize}[label=\textbullet]
+        \item theorical \& methodological frameworks
+    \end{itemize}
+    \item Educational robotics and computational thinking :
+    \begin{itemize}[label=\textbullet]
+        \item robotic and education
+        \item Technological Applications
+    \end{itemize}
+    \item Specific audiences :
+    \begin{itemize}[label=\textbullet]
+        \item older adult
+        \item kids
+    \end{itemize}
+    \item Conferences and interdisciplinary studies :
+    \begin{itemize}[label=\textbullet]
+        \item interdisciplinary contributions
+        \item talks and presentations
+    \end{itemize}
+\end{itemize}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{timeline.png}
+    \caption{Enter Caption}
+    \label{fig:enter-label}
+\end{figure}
+Cette catégorisation permet une navigation plus intuitive et un accès rapide aux sujets d’intérêt.
+
+\subsection{Comparaison des modes de présentation}
+Nous avons exploré plusieurs options pour représenter ces catégories :
+
+\begin{itemize}
+    \item Cercle interactif : Cette présentation est visuellement attrayante et intuitive, mais elle devient rapidement désorganisée avec l’ajout de nouvelles catégories ou articles.
+    
+    \item Timeline (Vis.js ou Timeline.js) : Une approche chronologique permettant de suivre l'évolution des recherches. Cependant, elle est moins pertinente pour une navigation basée sur des thématiques.
+
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{timeline.png}
+    \caption{example d'un site web en timeline}
+    \label{fig:timeline.png}
+    \end{figure}
+    
+    \item Vignettes (React ou Bootstrap) : Cette présentation offre un affichage structuré, clair et esthétique, chaque vignette représentant une catégorie. Elle est particulièrement adaptée à notre projet.
+    
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{vignettes.png}
+    \caption{example d'un site web en vignettes}
+    \label{fig:vignettes.png}
+    \end{figure}
+    
+    \item Mind map : Solution retenue. La mind map permet une visualisation claire des relations entre les catégories et les articles, ainsi qu’une hiérarchisation intuitive. Elle présente également l’avantage d’être facilement modifiable pour intégrer de nouvelles catégories ou publications.
+
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{mind_map.png}
+    \caption{example d'un site web en mind map}
+    \label{fig:mind_map.png}
+    \end{figure}
+\end{itemize}
+
+
+
+\subsection{Contraintes techniques}
+
+Nous n’avions pas accès aux fichiers sources de la page existante, ni aux articles hébergés sur le serveur de l’université, en raison de contraintes administratives et de délais prolongés liés à la période des vacances. Pour pallier ce problème, nous avons décidé de rediriger les catégories vers les articles et blogs publiés sur des plateformes externes telles que :
+
+\begin{itemize}
+    \item ResearchGate : Une plateforme de collaboration scientifique pour le partage de publications.
+    \item Frontiers : Une revue académique en libre accès.
+    \item Inria HAL : Une archive ouverte pour les publications scientifiques.
+\end{itemize}
+
+Cette solution assure l’accès au contenu tout en évitant la duplication des fichiers.
+
+
+\subsection{Technologies utilisées}
+Pour développer la carte interactive, nous avons employé les technologies suivantes :
+
+\begin{itemize}
+    \item HTML : Utilisé pour la structure et le contenu de la page.
+    \item CSS : Pour le design et la mise en page.
+    \item JavaScript : Pour ajouter des fonctionnalités interactives.
+    \item Node.js : Une plateforme JavaScript côté serveur, utilisée pour gérer les données et assurer une communication fluide entre les différentes composantes de l’application.
+    \item D3.js : Une bibliothèque JavaScript puissante pour créer des visualisations interactives et dynamiques, particulièrement utile pour construire la mind map.
+\end{itemize}
+
+\subsection{Presentation finale}
+
+La mind map interactive que nous avons conçue représente les catégories et les articles de manière hiérarchique. Elle permet une navigation intuitive tout en illustrant les relations entre les thématiques. Grâce à son architecture flexible, elle peut être mise à jour facilement pour intégrer de nouvelles publications ou restructurations.
+
+
+
+
+
+\section{Installation des Technologies}
+
+Pour mettre en œuvre ce projet, plusieurs technologies modernes ont été utilisées. Cette section détaille le processus d'installation pour chacune d'elles afin de reproduire l'environnement de développement.
+
+\subsection{Installation des langages et outils de base}
+
+Les langages \textbf{HTML}, \textbf{CSS}, et \textbf{JavaScript} sont interprétés directement par les navigateurs web modernes, évitant ainsi une installation complexe. Toutefois, pour faciliter le développement, nous avons utilisé \textbf{Visual Studio Code}, un éditeur de texte optimisé pour l'écriture de code grâce à des fonctionnalités comme l’auto-complétion et la coloration syntaxique.
+
+\subsubsection*{Étapes d'installation de Visual Studio Code :}
+\begin{enumerate}
+    \item Téléchargez Visual Studio Code depuis \url{https://code.visualstudio.com/}.
+    \item Installez-le en suivant les instructions. 
+    \item Sous Fedora, utilisez les commandes suivantes :
+    \begin{verbatim}
+        sudo dnf update
+        sudo dnf install code
+    \end{verbatim}
+\end{enumerate}
+
+\subsection{Installation de Node.js et npm}
+
+Node.js est essentiel pour exécuter du JavaScript côté serveur et gérer les dépendances via son gestionnaire de paquets, \textbf{npm}.
+
+\subsubsection*{Étapes d'installation :}
+\begin{enumerate}
+    \item Téléchargez la dernière version stable de Node.js depuis \url{https://nodejs.org/}.
+    \item Sous Fedora, exécutez les commandes suivantes :
+    \begin{verbatim}
+        sudo dnf update
+        sudo dnf install nodejs npm
+    \end{verbatim}
+    \item Vérifiez l'installation avec les commandes suivantes :
+    \begin{verbatim}
+        node -v
+        npm -v
+    \end{verbatim}
+\end{enumerate}
+
+\subsection{Installation de D3.js}
+
+D3.js est une bibliothèque puissante utilisée pour créer des visualisations de données interactives.
+
+\subsubsection*{Étapes d'installation :}
+\begin{enumerate}
+    \item Initialisez un projet Node.js en créant un fichier \texttt{package.json} :
+    \begin{verbatim}
+        npm init -y
+    \end{verbatim}
+    \item Installez D3.js via \texttt{npm} :
+    \begin{verbatim}
+        npm install d3
+    \end{verbatim}
+    \item Intégrez la bibliothèque dans votre fichier HTML principal à l'aide d'un CDN :
+    \begin{verbatim}
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+    \end{verbatim}
+\end{enumerate}
+
+L’utilisation de D3.js a permis de :
+\begin{itemize}
+    \item Créer une \textbf{mind map interactive} pour visualiser les relations hiérarchiques entre les articles.
+    \item Offrir une personnalisation esthétique et fonctionnelle de la visualisation.
+\end{itemize}
+
+\subsection{Organisation des fichiers et configuration de l’environnement}
+
+Le projet est structuré en plusieurs dossiers et fichiers pour une meilleure organisation :
+\begin{itemize}
+    \item \textbf{\texttt{mindmap\_project/}} (dossier racine) : Contient tous les fichiers du projet.
+    \begin{itemize}
+        \item \textbf{\texttt{node\_modules/}} : Ajouté automatiquement lors de l’installation des dépendances avec \texttt{npm}.
+        \item \textbf{\texttt{public/}} : Contient les ressources statiques comme les images et fichiers CSS.
+        \item \textbf{\texttt{views/}} : Regroupe
+        \item \textbf{\texttt{views/}} : Regroupe les pages HTML générées, comme celles affichant les articles.
+        \item \textbf{\texttt{index.js}} : Fichier principal pour le code côté serveur.
+        \item \textbf{\texttt{package.json}} : Contient les métadonnées du projet et les dépendances.
+        \item \textbf{\texttt{package-lock.json}} : Garantit la cohérence des versions des dépendances installées.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Serveur de développement local}
+
+Pour tester le projet, nous avons utilisé le serveur intégré de Node.js. Il permet d’accéder à la page web localement à l’adresse \texttt{http://localhost:3000/}, où :
+\begin{itemize}
+    \item \texttt{localhost} : Désigne l’ordinateur local.
+    \item \texttt{3000} : Est le numéro de port utilisé par le serveur.
+\end{itemize}
+
+L'exécution du serveur se fait via la commande suivante dans le terminal :
+\begin{verbatim}
+    node index.js
+\end{verbatim}
+
+Une fois lancé, toute modification des fichiers est immédiatement visible dans le navigateur.
+
+\subsection{Conclusion}
+
+Ces étapes d'installation et de configuration assurent un environnement stable et prêt pour le développement du projet. Elles permettent également à d'autres développeurs de reproduire ou d'améliorer le travail réalisé.
+
+
+
+
+
+
+
+
+\subsection{How to write Mathematics}
+
+\LaTeX{} is great at typesetting mathematics. Let $X_1, X_2, \ldots, X_n$ be a sequence of independent and identically distributed random variables with $\text{E}[X_i] = \mu$ and $\text{Var}[X_i] = \sigma^2 < \infty$, and let
+\[S_n = \frac{X_1 + X_2 + \cdots + X_n}{n}
+      = \frac{1}{n}\sum_{i}^{n} X_i\]
+denote their mean. Then as $n$ approaches infinity, the random variables $\sqrt{n}(S_n - \mu)$ converge in distribution to a normal $\mathcal{N}(0, \sigma^2)$.
+
+
+\subsection{How to change the margins and paper size}
+
+Usually the template you're using will have the page margins and paper size set correctly for that use-case. For example, if you're using a journal article template provided by the journal publisher, that template will be formatted according to their requirements. In these cases, it's best not to alter the margins directly.
+
+If however you're using a more general template, such as this one, and would like to alter the margins, a common way to do so is via the geometry package. You can find the geometry package loaded in the preamble at the top of this example file, and if you'd like to learn more about how to adjust the settings, please visit this help article on \href{https://www.overleaf.com/learn/latex/page_size_and_margins}{page size and margins}.
+
+\subsection{How to change the document language and spell check settings}
+
+Overleaf supports many different languages, including multiple different languages within one document. 
+
+To configure the document language, simply edit the option provided to the babel package in the preamble at the top of this example project. To learn more about the different options, please visit this help article on \href{https://www.overleaf.com/learn/latex/International_language_support}{international language support}.
+
+To change the spell check language, simply open the Overleaf menu at the top left of the editor window, scroll down to the spell check setting, and adjust accordingly.
+
+\subsection{How to add Citations and a References List}
+
+You can simply upload a \verb|.bib| file containing your BibTeX entries, created with a tool such as JabRef. You can then cite entries from it, like this: \cite{greenwade93}. Just remember to specify a bibliography style, as well as the filename of the \verb|.bib|. You can find a \href{https://www.overleaf.com/help/97-how-to-include-a-bibliography-using-bibtex}{video tutorial here} to learn more about BibTeX.
+
+If you have an \href{https://www.overleaf.com/user/subscription/plans}{upgraded account}, you can also import your Mendeley or Zotero library directly as a \verb|.bib| file, via the upload menu in the file-tree.
+
+\subsection{Good luck!}
+
+We hope you find Overleaf useful, and do take a look at our \href{https://www.overleaf.com/learn}{help library} for more tutorials and user guides! Please also let us know if you have any feedback using the Contact Us link at the bottom of the Overleaf menu --- or use the contact form at \url{https://www.overleaf.com/contact}.
+
+\bibliographystyle{alpha}
+\bibliography{sample}
+
+\end{document}
