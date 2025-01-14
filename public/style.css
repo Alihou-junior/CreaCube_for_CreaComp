@@ -1,46 +1,74 @@
+/* Global styles */
 body {
-    background: linear-gradient(135deg, #e0f7fa, #80deea, #26c6da);
-    background-attachment: fixed; /* Assure un affichage fluide lors du défilement */
-    font-family: Arial, sans-serif; /* Améliore la lisibilité */
-}
-
-
-button {
-    margin: 10px;
-    padding: 5px 15px;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-/* Style des liens */
-path {
-    stroke: #333;
-    stroke-width: 2px;
-    fill: none;
-}
-
-
-/* Texte des nœuds */
-text {
     font-family: Arial, sans-serif;
-    font-size: 14px;
-    fill: #333;
-    pointer-events: none;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
 }
 
-svg {
-    display: block;
-    margin: auto;
-    background-color: #f9f9f9;
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.8em;
+    color: #333;
+}
+
+/* Container styles */
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Article list styles */
+.article-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.article-item {
+    background-color: #fff;
     border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Effet hover sur les liens */
-path.link {
-    transition: stroke 0.3s ease;
+.article-item strong {
+    font-size: 1.1em;
+    color: #444;
 }
-path.link:hover {
-    stroke: #4CAF50;
-    stroke-width: 3;
+
+.article-item a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.article-item a:hover {
+    text-decoration: underline;
+}
+
+.article-item em {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* Back link styles */
+.back-link {
+    display: inline-block;
+    margin: 20px 0;
+    text-align: center;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.back-link:hover {
+    text-decoration: underline;
 }
